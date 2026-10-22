@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: build to bin",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/.vscode/build.sh",
+                "${file}",
+                "${workspaceFolder}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy", "Bypass",
+                    "-File", "${workspaceFolder}\\.vscode\\build.ps1",
+                    "${file}",
+                    "${workspaceFolder}"
+                ]
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
