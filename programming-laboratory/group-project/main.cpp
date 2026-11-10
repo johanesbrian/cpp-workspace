@@ -143,7 +143,7 @@ void print_event_row(event e){
     cout << left << setw(7) << e.event_id
          << setw(30) << e.event_name
          << setw(13) << e.category
-         << right << setw(14) << fixed << setprecision(2) << e.registration_fee
+         << right << setw(14) << fixed << setprecision(0) << e.registration_fee
          << setw(7) << e.days_until_event
          << "  " << left << classify_urgency(e.days_until_event) << "\n";
 }
@@ -215,7 +215,7 @@ void show_fee_statistics(event events[], int count){
     }
     double average = total / count;   // safe: count is at least 1 here
 
-    cout << fixed << setprecision(2);
+    cout << fixed << setprecision(0);
     cout << "\n--- Registration Fee Statistics ---\n";
     cout << "Number of events : " << count << "\n";
     cout << "Average fee      : Rp " << average << "\n";
@@ -408,7 +408,7 @@ void calculate_selected_total(event events[], int count){
             print_event_row(events[selected[i]]);
         }
     }
-    cout << fixed << setprecision(2);
+    cout << fixed << setprecision(0);
     cout << "Total registration fee of " << n << " selected event(s): Rp " << total << "\n";
 }
 
@@ -434,7 +434,7 @@ void find_suitable_events(event events[], int count){
         }
     }
     if (found == 0){
-        cout << fixed << setprecision(2);
+        cout << fixed << setprecision(0);
         cout << "No " << category << " events found with a fee of Rp "
              << budget << " or less.\n";
     } else{

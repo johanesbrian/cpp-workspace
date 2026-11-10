@@ -14,13 +14,17 @@
                 "command": "powershell",
                 "args": [
                     "-NoProfile",
-                    "-ExecutionPolicy", "Bypass",
-                    "-File", "${workspaceFolder}\\.vscode\\build.ps1",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "${workspaceFolder}\\.vscode\\build.ps1",
                     "${file}",
                     "${workspaceFolder}"
                 ]
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
